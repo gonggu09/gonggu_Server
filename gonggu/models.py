@@ -12,7 +12,7 @@ class User(models.Model):
 class Item(models.Model):
     productName = models.CharField(max_length=100)
     price = models.IntegerField()
-    productImg = models.ImageField(blank=True, upload_to='item_images/')
+    productImg = models.ImageField(blank=True, null=True, upload_to='item_images/')
     startDate = models.DateField()
     endDate = models.DateField()
     sellerId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sellerId')
