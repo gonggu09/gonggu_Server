@@ -15,7 +15,7 @@ class Item(models.Model):
     productImg = models.ImageField(blank=True, upload_to='item_images/')
     startDate = models.DateField()
     endDate = models.DateField()
-    sellerId = models.ForeignKey(User, on_delete=models.CASCADE)
+    sellerId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sellerId')
     url = models.CharField(max_length=500, default='http://example.com')
     
     def __str__(self):

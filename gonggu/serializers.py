@@ -7,6 +7,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ItemSerializer(serializers.ModelSerializer):
+    sellerId = serializers.CharField(source='sellerId.name', read_only=True)
+    profile_photo=serializers.ImageField(source='sellerId.profile_photo', read_only=True)
+
     class Meta:
         model = Item
-        fields = '__all__'
+        fields = ['sellerId', 'productName', 'price', 'productImg', 'startDate', 'endDate', 'url', 'profile_photo']
