@@ -10,18 +10,13 @@ class User(models.Model):
         return self.name
     
 class Item(models.Model):
-    item_name = models.CharField(max_length=100)
-    item_price = models.IntegerField()
-    item_photo = models.ImageField(blank=True, upload_to='item_images/')
-    start_time = models.DateField()
-    end_time = models.DateField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    productName = models.CharField(max_length=100)
+    price = models.IntegerField()
+    productImg = models.ImageField(blank=True, upload_to='item_images/')
+    startDate = models.DateField()
+    endDate = models.DateField()
+    sellerId = models.ForeignKey(User, on_delete=models.CASCADE)
+    url = models.CharField(max_length=500, default='http://example.com')
     
     def __str__(self):
-        return self.item_name
-    
-    def user_name(self):
-        return self.user.name
-
-    def user_profile_photo(self):
-        return self.user.profile_photo.url if self.user.profile_photo else None
+        return self.productName
