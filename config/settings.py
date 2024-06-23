@@ -17,7 +17,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = 'True'
 
 ALLOWED_HOSTS = [
-    'http://127.0.0.1:8000',
+    # 'http://127.0.0.1:8000',
     '127.0.0.1',
     'port-0-gonggu-server-1272llwumkaqn.sel5.cloudtype.app',
 ]
@@ -30,8 +30,10 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # CSRF 설정
-CORS_TRUSTED_ORIGINS = [
-    '*',
+CSRF_TRUSTED_ORIGINS = [
+    'https://port-0-gonggu-server-1272llwumkaqn.sel5.cloudtype.app',
+    'http://127.0.0.1:8000',
+    "http://127.0.0.1:3000",
 ]
 
 
@@ -54,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
