@@ -27,6 +27,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'https://port-0-gonggu-server-1272llwumkaqn.sel5.cloudtype.app',
     'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
 ]
 
 # CSRF 설정
